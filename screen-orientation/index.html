@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Orientation</title>
+</head>
+
+<body>
+
+  <script>
+    function getOrientation() {
+      const isPortrait = screen.orientation.type.includes("portrait");
+      return isPortrait ? "portrait" : "landscape"
+    }
+
+    console.log(getOrientation())
+    console.log(screen)
+  </script>
+</body>
+
+</html>

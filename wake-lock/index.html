@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wake lock API</title>
+</head>
+
+<body>
+  <button>Click</button>
+
+</body>
+
+<script>
+  const button = document.querySelector('button')
+
+  let wakelock;
+  async function stayAwake() {
+    wakelock = navigator.wakeLock.request('screen')
+  }
+  async function allowSleep() {
+    await wakelock.release()
+  }
+
+  document.addEventListener('click', async () => {
+    await stayAwake()
+    setTimeout(async () => {
+      await allowSleep()
+    }, 45000);
+  })
+</script>
+
+</html>

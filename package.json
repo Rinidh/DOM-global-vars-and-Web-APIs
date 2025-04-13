@@ -1,0 +1,14 @@
+{
+  "name": "dom-global-vars",
+  "version": "1.0.0",
+  "description": "\"Has snippets portraying the use of  local APIs (intersection-observer, indexedDB...)\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "idb-wrapper": "^1.7.2"
+  }
+}

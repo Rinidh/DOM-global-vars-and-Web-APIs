@@ -1,0 +1,9 @@
+finish select text & share menu
+  -program to auto show share menu (check on phone)
+
+
+
+
+ERROR: Uncaught TypeError: Cannot read properties of null (reading 'transaction') at g.put
+  - An issue in the library, even older versions
+  - Seek yt for other libs on how to use indexedDB (very useful feature!)

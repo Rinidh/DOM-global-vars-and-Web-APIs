@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <title>Page visibility API</title>
+</head>
+
+<body>
+  <h1>Page visibility API</h1>
+  <div id='video'>
+    <h2 id='video-text'>Video is playing...</h3>
+      <i id='play-pause-icon' class="fa-solid fa-pause"></i>
+  </div>
+  <h3 id='message'>Leave this page to pause video</h5>
+
+    <style>
+      * {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      i {
+        font-size: 40px;
+      }
+
+      #video {
+        height: 300px;
+        width: 300px;
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+</body>
+
+<script src='./index.js'></script>
+
+</html>

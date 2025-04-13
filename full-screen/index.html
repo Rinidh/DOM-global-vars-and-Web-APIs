@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full screen</title>
+</head>
+
+<body>
+  <main>
+    <!-- data- att stores strings, so 'false' is truthy -->
+    <button class='all-full-screen'>Enter all into full screen</button>
+
+    <div class="orange">
+      <button class='only-div-full-screen'>Enter only div into full screen</button>
+    </div>
+  </main>
+
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background-color: lightgray;
+    }
+
+    button {
+      font-size: 40px;
+      background-color: yellow;
+    }
+
+    button:fullscreen {
+      background-color: lightgreen;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .orange {
+      background-color: orange;
+      margin-top: 20px;
+      height: 70vh;
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</body>
+
+<script>
+  const allFullScreenButton = document.querySelector(".all-full-screen")
+  allFullScreenButton.addEventListener("click", () => {
+    const isFullScreen = document.fullscreenElement //returns null | full screen enabled DOM elem
+
+    if (!isFullScreen) {
+      document.documentElement.requestFullscreen()
+      allFullScreenButton.textContent = "Exit (Esc)"
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen()
+      allFullScreenButton.textContent = "Enter all into fullscreen"
+    }
+  })
+
+  const onlyDivFullscreenButton = document.querySelector(".only-div-full-screen")
+  const orangeDiv = document.querySelector(".orange")
+  onlyDivFullscreenButton.addEventListener("click", () => {
+    const isFullScreen = document.fullscreenElement
+
+    if (!isFullScreen) {
+      orangeDiv.requestFullscreen()
+      onlyDivFullscreenButton.textContent = "Exit (Esc)"
+    } else {
+      document.exitFullscreen()
+      onlyDivFullscreenButton.textContent = "Enter all into fullscreen"
+    }
+  })
+
+</script>
+
+</html>

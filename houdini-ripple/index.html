@@ -1,0 +1,30 @@
+<!-- //FAILED TO WORK with error: "Cannot read prop .toString() of undefined (in ripple.js)" -->
+<!-- See for more: https://www.smashingmagazine.com/2020/03/practical-overview-css-houdini/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Houdini effect - Location aware ripple</title>
+</head>
+
+<body>
+  <button>
+    Click for Ripple effect
+  </button>
+
+  <style>
+    button {
+      background-color: red;
+      background-image: paint(ripple);
+      padding: 20px;
+      font-size: 20px;
+    }
+  </style>
+</body>
+
+<script src='./index.js'></script>
+
+</html>
