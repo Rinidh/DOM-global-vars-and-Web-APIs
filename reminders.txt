@@ -1,6 +1,5 @@
-finish select text & share menu
-  -program to auto show share menu (check on phone)
-
+which transform to use to animate div to an exact x & y coordinate, instead of transform: translateX(20px) which increases its x offset by 20px
+  position: relative, then again position: abs ??
 
 
 

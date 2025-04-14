@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Transition API</title>
+
+  <style>
+    html {
+      background-color: rgb(24, 24, 24);
+      color: whitesmoke;
+    }
+
+    .container {
+      border: 2px solid red;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .card {
+      background-color: darkcyan;
+      height: 200px;
+      /* transform: translateX(0);
+      transform: translateY(0); */
+      /* transition: transform 10s ease-out; */
+      /* ?? the transition timing used is still of the animation */
+    }
+
+    @keyframes slide-left {
+      to {
+        transform: translateX(-100px);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+    }
+
+    @keyframes disappear {
+      to {
+        opacity: 0;
+      }
+    }
+
+    .expanded {
+      animation: 1s both ease-out slide-left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">a</div>
+    <div class="card">b</div>
+    <div class="card">c</div>
+    <div class="card">d</div>
+    <div class="card">e</div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
