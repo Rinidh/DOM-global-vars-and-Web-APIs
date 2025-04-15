@@ -14,7 +14,7 @@
 
     .container {
       border: 2px solid red;
-      width: 100%;
+      /* width: fit-content; */
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
@@ -23,19 +23,20 @@
     .card {
       background-color: darkcyan;
       height: 200px;
-      /* transform: translateX(0);
-      transform: translateY(0); */
+      width: 200px;
+      transform: translate(0, 0);
+      view-transition-name: slidingCard;
       /* transition: transform 10s ease-out; */
       /* ?? the transition timing used is still of the animation */
     }
 
-    @keyframes slide-left {
+    @keyframes move {
       to {
-        transform: translateX(-100px);
+        transform: translate(100px, 200px);
       }
     }
 
-    @keyframes appear {
+    /* @keyframes appear {
       from {
         opacity: 0;
       }
@@ -45,10 +46,16 @@
       to {
         opacity: 0;
       }
-    }
+    } */
 
-    .expanded {
-      animation: 1s both ease-out slide-left;
+    /* .move {
+      transform: translate(30px, 0px);
+    } */
+
+    ::view-transition-new(slidingCard),
+    ::view-transition-old(slidingCard) {
+      /* whecever "any" DOM change happens to the elem having the view-transition-name of slidingCard, just animate it by translation as below*/
+      animation: move 1s ease-out forwards;
     }
   </style>
 </head>
@@ -56,10 +63,10 @@
 <body>
   <div class="container">
     <div class="card">a</div>
-    <div class="card">b</div>
+    <!-- <div class="card">b</div>
     <div class="card">c</div>
     <div class="card">d</div>
-    <div class="card">e</div>
+    <div class="card">e</div> -->
   </div>
 
   <script src="./index.js"></script>

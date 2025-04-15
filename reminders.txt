@@ -1,6 +1,9 @@
-which transform to use to animate div to an exact x & y coordinate, instead of transform: translateX(20px) which increases its x offset by 20px
-  position: relative, then again position: abs ??
+first make small demo of what article is teaching
 
+make many grids with diff animations on divs upon click:
+  1.a div expands and slides to left-side
+  2.a div expands forth (popover)
+  3.see nerdy dev's examples for ideas
 
 
 ERROR: Uncaught TypeError: Cannot read properties of null (reading 'transaction') at g.put
