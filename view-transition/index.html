@@ -16,7 +16,7 @@
       /* border: 2px solid red; */
       width: 100%;
       display: flex;
-      justify-content: end;
+      /* justify-content: end; */
       /* display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px; */
@@ -33,11 +33,11 @@
       /* ?? the transition timing used is still of the animation */
     }
 
-    @keyframes move {
+    /* @keyframes move {
       to {
         transform: translate(100px, 200px);
       }
-    }
+    } */
 
     /* @keyframes appear {
       from {
@@ -55,12 +55,43 @@
       transform: translate(30px, 0px);
     } */
 
-    ::view-transition-new(slidingCard),
+    /* ::view-transition-new(slidingCard),
     ::view-transition-old(slidingCard) {
-      /* whecever "any" DOM change happens to the elem having the view-transition-name of slidingCard, just animate it by translation as below*/
-      /* animation: move 1s ease-out forwards; */
-      animation-duration: 7s;
-      /* this timing is fot the cross fade, no control over the sliding anmiation?? */
+      animation: move 1s ease-out forwards;
+    } */
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade-out {
+      to {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slide-from-right {
+      from {
+        transform: translateX(30px);
+      }
+    }
+
+    @keyframes slide-to-left {
+      to {
+        transform: translateX(-30px);
+      }
+    }
+
+    ::view-transition-old(slidingCard) {
+      animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+        300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+    }
+
+    ::view-transition-new(slidingCard) {
+      animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+        300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
     }
   </style>
 </head>
