@@ -13,11 +13,14 @@
     }
 
     .container {
-      border: 2px solid red;
-      /* width: fit-content; */
-      display: grid;
+      /* border: 2px solid red; */
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      /* display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
+      gap: 10px; */
+
     }
 
     .card {
@@ -55,7 +58,9 @@
     ::view-transition-new(slidingCard),
     ::view-transition-old(slidingCard) {
       /* whecever "any" DOM change happens to the elem having the view-transition-name of slidingCard, just animate it by translation as below*/
-      animation: move 1s ease-out forwards;
+      /* animation: move 1s ease-out forwards; */
+      animation-duration: 7s;
+      /* this timing is fot the cross fade, no control over the sliding anmiation?? */
     }
   </style>
 </head>

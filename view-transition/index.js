@@ -1,15 +1,29 @@
 const cards = document.querySelectorAll(".card")
 
+const updateDOM = function () {
+  // c.classList.toggle("move")
+  // c.textContent = "moved"
+
+  const newCard = document.createElement("div")
+  newCard.style.viewTransitionName = "slidingCard"
+  newCard.style.height = "200px"
+  newCard.style.width = "200px"
+  newCard.style.backgroundColor = "darkred"
+  newCard.textContent = "new card"
+
+  document.body.replaceChildren(newCard)
+
+}
+
 cards.forEach(c => {
   c.addEventListener("click", async () => {
     if (!document.startViewTransition) {
-      c.classList.toggle("move")
+      updateDOM()
       return
     }
 
     const transition = document.startViewTransition(() => {
-      // c.classList.toggle("move")
-      c.textContent = "moved"
+      updateDOM()
     })
     await transition.finished
   })
